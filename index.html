@@ -1,49 +1,566 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <meta name="description" content="Portfólio Yago desenvolvedor" />
-    <title>yago.dev</title>
+    <title>Yago Cayo — Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfólio de Yago Cayo: desenvolvedor front-end e mobile com mais de 6 anos de experiência em suporte e infraestrutura de TI."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans...&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@600;700;800&family=VT323&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header class="site-header">
-      <section class="wrap nav">
-        <a class="logo" href="#top" aria-label="Voltar ao início">
-          <span class="logo-dot"></span>yago.dev
-        </a>
+    <div class="bg" aria-hidden="true"></div>
+    <canvas id="sky" aria-hidden="true"></canvas>
 
-        <nav aria-label="Navegação principal">
-          <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#tecnologia">Tecnologias</a></li>
-            <li><a href="#experiencia">Experiência</a></li>
-            <li><a href="#formacao">Formação</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </nav>
-
+    <header>
+      <div class="wrap nav">
+        <a class="logo" href="#top" aria-label="Início"><i></i>yago.dev</a>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
         <button
-          class="btn line theme-cycle"
+          class="btn line"
           id="cycle"
           type="button"
           title="Trocar tema (T)"
         >
-          <span id="tname">Tema</span> <kbd>T</kbd>
+          Tema: <b id="tname">Neon</b>
         </button>
-      </section>
+      </div>
     </header>
-    <main></main>
-    <footer></footer>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap">
+          <h1 aria-label="Yago Cayo Software engineer.">
+            <span class="l1" data-t="Yago Cayo" aria-hidden="true"
+              >Yago Cayo</span
+            ><span class="l2" data-t="Software engineer." aria-hidden="true"
+              >desenvolvedor fullstack.</span
+            >
+          </h1>
+          <div
+            class="term glass"
+            aria-label="Apresentação em formato de terminal"
+          >
+            <div class="tbar">
+              <i></i><i></i><i></i><span>~/yago — zsh</span>
+            </div>
+            <div id="out"></div>
+          </div>
+          <div class="cta">
+            <a class="btn solid" href="#experiencia">Ver experiência</a>
+            <a
+              class="btn"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a class="btn line" href="#contato">Falar comigo</a>
+          </div>
+          <div class="themes" id="themes">
+            <span>TEMAS <kbd>T</kbd>:</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre">
+        <div class="wrap">
+          <h2><a href="#sobre">Sobre</a></h2>
+          <p class="lead">Desenvolvedor</p>
+          <div class="about">
+            <div>
+              <p>
+                "Olá! Me chamo Yago, sou formado em Análise e Desenvolvimento de
+                Sistemas e atualmente busco uma transição de carreira,
+                complementando minha formação com uma pós-graduação em
+                Engenharia de Software."
+              </p>
+              <p>
+                Profissional de TI com 5 anos de experiência em infraestrutura,
+                telecomunicações e sistemas corporativos. Minha sólida bagagem
+                em suporte e ambientes críticos me moldou com alta resiliência
+                sob pressão, rigor analítico e foco implacável na resolução de
+                problemas. Hoje, direciono essa maturidade técnica para o
+                desenvolvimento de software (Full-Stack & Mobile). Aliando minha
+                vivência prática em infraestrutura à especialização em
+                Engenharia de Software, desenvolvo aplicações web e mobile
+                modernas utilizando HTML ,CSS, JavaScript, TypeScript, React,
+                React Native, Node.js, Rust, Python, C e C++ entregando soluções
+                robustas, escaláveis e centradas no usuário
+              </p>
+            </div>
+            <ul class="facts glass">
+              <li>
+                <span>Graduação</span
+                ><b
+                  >Análise e Desenvolvimento de Sistemas<br />
+                  Unifavip/Wyden</b
+                >
+              </li>
+              <li>
+                <span>Pós</span
+                ><b
+                  >Engenharia de Software <br />
+                  Uninassau</b
+                >
+              </li>
+              <li>
+                <span>Sempre Estudando</span
+                ><b
+                  >Desenvolvimento Fullstack <br />
+                  Onebitcode · Origamid · Udemy
+                </b>
+              </li>
+              <li>
+                <span>Sistemas operacionais</span
+                ><b>Linux/Debian, Windows e MacOS</b>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack">
+        <div class="wrap">
+          <h2><a href="#stack">Stack</a></h2>
+          <p class="lead">
+            As tecnologias que uso e estudo nos projetos pessoais.
+          </p>
+          <div
+            class="carousel"
+            id="carousel"
+            aria-label="Tecnologias que uso"
+          ></div>
+
+          <div class="certificates-wrapper">
+            <div class="glass certificates-card">
+              <h3>
+                <span class="cert-dot"></span>
+                Certificados
+              </h3>
+              <div class="cert-grid">
+                <div class="cert-item">
+                  <span class="tag">ONEBITCODE</span>
+                  <span class="tag">cursando</span>
+                  <h4>Formação Full Stack JavaScript</h4>
+                  <p>
+                    Html, Css, JavaScript, TypeScript, Git, Github, Bootstrap,
+                    Sass, React, TSX, Next.js, Node.js, PostgreSQL, MongoDB,
+                    Prisma ORM, Agentes de IA, Desenvolvimento com claude
+                  </p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+
+                <div class="cert-item">
+                  <span class="tag">ORIGAMID</span>
+                  <h4>Front End + Back End + UI Design</h4>
+                  <p>
+                    UI Design, Html, Css, JavaScript, TypeScript, React, TSX,
+                    Next.js, Node.js, Tailwind,SQLite
+                  </p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <span class="tag">Cod3r</span>
+                  <h4>JavaScript Funcional e Reativo PENSE como um Dev.js</h4>
+                  <p>Conceitos avançados de JS.</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <h4>
+                    Algoritmos e Lógica de Programação do Absoluto ZERO!
+                    Completo Com JavaScript
+                  </h4>
+                  <p>Algoritmos e Lógica de Programação</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <h4>
+                    Algoritmos e Lógica de Programação do Absoluto ZERO!
+                    Completo Com JavaScript
+                  </h4>
+                  <p>Algoritmos e Lógica de Programação</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <h4>
+                    Algoritmos e Lógica de Programação do Absoluto ZERO!
+                    Completo Com JavaScript
+                  </h4>
+                  <p>Algoritmos e Lógica de Programação</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <h4>
+                    Algoritmos e Lógica de Programação do Absoluto ZERO!
+                    Completo Com JavaScript
+                  </h4>
+                  <p>Algoritmos e Lógica de Programação</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <h4>
+                    Algoritmos e Lógica de Programação do Absoluto ZERO!
+                    Completo Com JavaScript
+                  </h4>
+                  <p>Algoritmos e Lógica de Programação</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+                <div class="cert-item">
+                  <span class="tag">UDEMY</span>
+                  <h4>
+                    Algoritmos e Lógica de Programação do Absoluto ZERO!
+                    Completo Com JavaScript
+                  </h4>
+                  <p>Algoritmos e Lógica de Programação</p>
+                  <a
+                    class="btn line cert-btn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver Certificado</a
+                  >
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <div class="wrap">
+          <h2><a href="#experiencia">Experiência</a></h2>
+          <p class="lead">
+            Suporte, infraestrutura e sistemas de loja. A barra ao lado de cada
+            cargo mostra o tempo na função.
+          </p>
+          <div class="jobs">
+            <article class="job">
+              <div class="when">
+                04/2025 – 05/2026<span class="meter" style="--w: 37%"
+                  ><i></i></span
+                >1 ano e 2 meses
+              </div>
+              <div>
+                <h3>Suporte de Tecnologia</h3>
+                <p class="co">Frosty</p>
+                <ul>
+                  <li>
+                    Apoio na implantação de sistemas em lojas, com configuração
+                    e testes de funcionamento.
+                  </li>
+                  <li>
+                    Diagnóstico e resolução de problemas em Comerzzia, PDVOne,
+                    SAP B1 e GLPI.
+                  </li>
+                  <li>
+                    Helpdesk e manutenção de computadores, aplicando raciocínio
+                    analítico à resolução de bugs.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="job">
+              <div class="when">
+                02/2021 – 10/2022<span class="meter" style="--w: 55%"
+                  ><i></i></span
+                >1 ano e 9 meses
+              </div>
+              <div>
+                <h3>Técnico de Infraestrutura</h3>
+                <p class="co">Mob Telecom / Giga+</p>
+                <ul>
+                  <li>
+                    Suporte técnico e monitoramento da infraestrutura de rede
+                    externa e interna.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="job">
+              <div class="when">
+                01/2018 – 02/2021<span class="meter" style="--w: 100%"
+                  ><i></i></span
+                >3 anos e 2 meses
+              </div>
+              <div>
+                <h3>Técnico de Suporte</h3>
+                <p class="co">Linkce</p>
+                <ul>
+                  <li>
+                    Suporte e treinamento de colaboradores em instalação e
+                    configuração de equipamentos de rede (Mikrotik, Huawei, ONU,
+                    ONT).
+                  </li>
+                  <li>
+                    Atendimento a clientes, com resolução de problemas em
+                    sistemas operacionais e softwares.
+                  </li>
+                  <li>
+                    Uso de sistemas de gestão (Mk Solutions, ANM2000) para
+                    provisionamento e chamados.
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="formacao">
+        <div class="wrap">
+          <h2><a href="#formacao">Formação</a></h2>
+          <p class="lead">
+            Faculdade, pós-graduação e cursos práticos para sair do zero e
+            chegar ao fullstack.
+          </p>
+          <div class="edu">
+            <div>
+              <h3>Acadêmica</h3>
+              <ul class="list glass">
+                <li>
+                  <span
+                    >Análise e Desenvolvimento de Sistemas<small
+                      >Unifavip/Wyden</small
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span
+                    >Pós em Engenharia de Software<small>Uninassau</small></span
+                  ><span class="tag">cursando</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Cursos</h3>
+              <ul class="list glass">
+                <li>
+                  <span>Desenvolvimento Fullstack<small>Onebitcode</small></span
+                  ><span class="tag">cursando</span>
+                </li>
+                <li>
+                  <span
+                    >JavaScript Funcional e Reativo<small
+                      >Udemy - cod3r</small
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span>React + Redux e React Native<small>Udemy</small></span>
+                </li>
+                <li>
+                  <span
+                    >Desenvolvimento Fullstack + UX/UI<small
+                      >Origamid</small
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span
+                    >Algoritmos, HTML, CSS, JS, Git e GitHub<small
+                      >Curso em Vídeo</small
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span
+                    >Lógica de Programação do absoluto zero<small
+                      >Udemy - cod3r</small
+                    ></span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos">
+        <div class="wrap">
+          <h2><a href="#projetos">Projetos</a></h2>
+          <p class="lead">
+            Alguns dos principais projetos que desenvolvi para consolidar meus
+            conhecimentos.
+          </p>
+          <div class="projects-grid">
+            <article class="project-card glass">
+              <h3>Nome do Projeto 1</h3>
+              <p>descrição xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">TypeScript</span>
+              </div>
+              <div class="project-links">
+                <a
+                  class="btn solid"
+                  href="https://github.com/seu-usuario/projeto-1"
+                  target="_blank"
+                  rel="noopener"
+                  >Repositório</a
+                >
+                <a
+                  class="btn line"
+                  href="https://projeto-demo.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Ver Online</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card glass">
+              <h3>Nome do Projeto 2</h3>
+              <p>descrição xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+              <div class="project-tags">
+                <span class="tag">React Native</span>
+                <span class="tag">API REST</span>
+              </div>
+              <div class="project-links">
+                <a
+                  class="btn solid"
+                  href="https://github.com/seu-usuario/projeto-2"
+                  target="_blank"
+                  rel="noopener"
+                  >Repositório</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card glass">
+              <h3>Nome do Projeto 3</h3>
+              <p>descrição xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+              <div class="project-tags">
+                <span class="tag">React Native</span>
+                <span class="tag">API REST</span>
+              </div>
+              <div class="project-links">
+                <a
+                  class="btn solid"
+                  href="xxxxxxxx"
+                  target="_blank"
+                  rel="noopener"
+                  >Repositório</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="contact">
+        <div class="wrap">
+          <div class="glass">
+            <h2>Entre em contato comigo</h2>
+            <p>
+              Estou sempre estudando e em busca da primeira oportunidade como
+              desenvolvedor
+            </p>
+
+            <div class="links">
+              <a
+                class="btn solid"
+                href="https://linkedin.com/in/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a
+                class="btn"
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>© <span id="yr">2026</span> Yago Cayo</span
+        ><span>Fortaleza/Maracanaú – CE</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
